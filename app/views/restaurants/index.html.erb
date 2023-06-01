@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center">
+  <h1>Welcome to Soogy <%=Current.user.name %></h1>
+</div>
+
+<div class="d-flex justify-content-center my-4">
+  <h3> Please choose a restaurant </h3>
+</div>
+
+<h5> Available Restaurants </h5>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant %>
+    </li>
+  <% end %>
+</ul>
+
+<% if Current.user.name == "Tester 1" %>
+  <%= link_to "New Restaurant", new_restaurant_path %>
+<% end %>

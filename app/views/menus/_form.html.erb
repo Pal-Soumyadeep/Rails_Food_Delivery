@@ -1,0 +1,15 @@
+<%= form_with model: [ @restaurant, @restaurant.menus.build ] do |form| %>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Menu Item Name" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: "form-control", placeholder: "price" %>
+  </div>
+
+  <div class = "mb-3">
+    <%= form.submit "Add Item", class: "btn btn-primary" %>
+  </div>
+<% end %>

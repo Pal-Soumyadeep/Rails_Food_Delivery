@@ -1,0 +1,8 @@
+<h1> Hi! <%= Current.user.name %> </h1>
+<ul>
+  <li>Email: <%= Current.user.email %></li>
+  <li>Contact No.:  <%= Current.user.contact %></li>
+</ul>
+<h2> What would you like to do? </h2>
+<li><%= link_to "Edit", edit_user_path(Current.user) %></li>
+<li><%= link_to "Delete", user_path(Current.user), method: :delete %></li>

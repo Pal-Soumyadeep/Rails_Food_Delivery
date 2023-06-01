@@ -1,0 +1,25 @@
+<%= form_with model: restaurant do |form| %>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Restaurant Name" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :category %>
+    <%= form.text_field :category, class: "form-control", placeholder: "Category" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :open %>
+    <%= form.time_field :open, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :close %>
+    <%= form.time_field :close, class: "form-control" %>
+  </div>
+
+  <div class = "mb-3">
+    <%= form.submit "Add Restaurant", class: "btn btn-primary" %>
+  </div>
+<% end %>

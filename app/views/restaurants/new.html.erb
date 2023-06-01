@@ -1,0 +1,5 @@
+<% if Current.user.name == "Tester 1" %>
+  <h1> New Restaurant </h1>
+
+  <%= render "form", restaurant: @restaurant %>
+<% end %>

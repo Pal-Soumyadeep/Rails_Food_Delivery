@@ -1,0 +1,12 @@
+<p>
+  <strong>Item Name: </Strong>
+  <%= menu.name %>
+  <strong class=>Price: </Strong>
+  <%= menu.price %>
+</p>
+
+<% if Current.user.name == "Tester 1" %>
+  <p>
+    <%= link_to "Delete Item", [menu.restaurant, menu], method: :delete %>
+  </p>
+<% end %>

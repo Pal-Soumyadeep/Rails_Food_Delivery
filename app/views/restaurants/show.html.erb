@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %></h1>
+
+<h2> Menu </h2>
+<%= render @restaurant.menus %>
+
+<% if Current.user.name == "Tester 1" %>
+  <h5> Add Items </h5>
+  <%= render 'menus/form' %>
+
+  <ul>
+    <li><%= link_to "Edit", edit_restaurant_path(@restaurant) %></li>
+    <li><%= link_to "Delete", restaurant_path(@restaurant), method: :delete %></li>
+  </ul>
+<% end %>
