@@ -6,7 +6,7 @@
   <%= button_to "Buy Now", restaurant_path, class: "btn btn-warning" %>
 </p>
 
-<% if Current.user.name == "Tester 1" %>
+<% if Current.user.role == "admin" %>
   <p>
     <%= link_to "Delete Item", [menu.restaurant, menu], method: :delete %>
   </p>
