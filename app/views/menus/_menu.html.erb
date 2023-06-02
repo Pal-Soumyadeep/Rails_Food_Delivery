@@ -1,8 +1,9 @@
 <p>
   <strong>Item Name: </Strong>
   <%= menu.name %>
-  <strong class=>Price: </Strong>
+  <strong>Price: </Strong>
   <%= menu.price %>
+  <%= button_to "Buy Now", restaurant_path, class: "btn btn-warning" %>
 </p>
 
 <% if Current.user.name == "Tester 1" %>
