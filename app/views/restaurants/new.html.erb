@@ -1,4 +1,4 @@
-<% if Current.user.name == "Tester 1" %>
+<% if Current.user.role == "admin" %>
   <h1> New Restaurant </h1>
 
   <%= render "form", restaurant: @restaurant %>

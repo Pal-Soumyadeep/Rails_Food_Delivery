@@ -3,7 +3,7 @@
 <h2> Menu </h2>
 <%= render @restaurant.menus %>
 
-<% if Current.user.name == "Tester 1" %>
+<% if Current.user.role == "admin" %>
   <h5> Add Items </h5>
   <%= render 'menus/form' %>
 

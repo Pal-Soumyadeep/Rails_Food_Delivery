@@ -16,6 +16,6 @@
   <% end %>
 </ul>
 
-<% if Current.user.name == "Tester 1" %>
+<% if Current.user.role== "admin" %>
   <%= link_to "New Restaurant", new_restaurant_path %>
 <% end %>
