@@ -1,11 +1,10 @@
 class LineItem < ApplicationRecord
-  belongs_to :restaurant
   belongs_to :menu
   belongs_to :cart
-  belongs_to :order
+  belongs_to :order, optional: true
 
-  # LOGIC
   def total_price
-    self.quantity * self.product.price
+    return 0 if menu.nil? || quantity.nil?
+    quantity * menu.price
   end
 end

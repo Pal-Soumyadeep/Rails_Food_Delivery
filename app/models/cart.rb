@@ -2,12 +2,11 @@ class Cart < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :menus, through: :line_items
 
-  # LOGIC
-  def sub_total
+  def subtotal
     sum = 0
-    self.line_items.each do |line_item|
-      sum+= line_item.total_price
+    line_items.each do |line_item|
+      sum += line_item.total_price
     end
-    return sum
+    sum
   end
 end

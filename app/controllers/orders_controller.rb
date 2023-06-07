@@ -13,17 +13,17 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @current_cart.line_items.each do |item|
-      @order.line_items << item
-      item.cart_id = nil
-    end
+    @order.line_items << @current_cart.line_items
     @order.save
-    Cart.destroy(session[:cart_id])
+
+    @current_cart.destroy
     session[:cart_id] = nil
-    redirect_to root_path
+
+    redirect_to root_path, notice: 'Order was successfully created.'
   end
-  
+
   private
+
   def order_params
     params.require(:order).permit(:name, :email, :address, :pay_method)
   end

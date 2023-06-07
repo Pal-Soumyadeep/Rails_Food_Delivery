@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_06_083017) do
+ActiveRecord::Schema.define(version: 2023_06_07_184851) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2023_06_06_083017) do
     t.integer "menu_id"
     t.integer "cart_id"
     t.integer "order_id"
-    t.integer "restaurant_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -65,6 +64,5 @@ ActiveRecord::Schema.define(version: 2023_06_06_083017) do
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "menus"
   add_foreign_key "line_items", "orders"
-  add_foreign_key "line_items", "restaurants"
   add_foreign_key "menus", "restaurants"
 end
