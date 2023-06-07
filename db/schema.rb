@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_02_045354) do
+ActiveRecord::Schema.define(version: 2023_06_07_184851) do
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "menu_id"
+    t.integer "cart_id"
+    t.integer "order_id"
+  end
 
   create_table "menus", force: :cascade do |t|
     t.string "name"
@@ -19,6 +31,15 @@ ActiveRecord::Schema.define(version: 2023_06_02_045354) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_menus_on_restaurant_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "address"
+    t.string "pay_method"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -40,5 +61,8 @@ ActiveRecord::Schema.define(version: 2023_06_02_045354) do
     t.string "role"
   end
 
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "menus"
+  add_foreign_key "line_items", "orders"
   add_foreign_key "menus", "restaurants"
 end

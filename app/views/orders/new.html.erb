@@ -1,0 +1,17 @@
+<%= form_for(@order) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= Current.user.name %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= Current.user.email %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
