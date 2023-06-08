@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :users
   resources :restaurants do
-    # resources :menus do
+    resources :menus #do
       # post "line_items/:id/add", to: "line_items#add_quantity", as: "line_item_add"
       # post "line_items/:id/reduce", to: "line_items#reduce_quantity", as: "line_item_reduce"
       # post "line_items", to: "line_items#create"
