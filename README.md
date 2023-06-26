@@ -1,24 +1,17 @@
-# README
+Ruby version 2.7.3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails version 6.0.6.1
 
-Things you may want to cover:
+Database: sqlite3
 
-* Ruby version
+Steps to run:
 
-* System dependencies
+1. run bundle install
 
-* Configuration
+2. run rails db:migrate
 
-* Database creation
+3. After starting the server using rails s. You can create user by going to sign up screen and selecting role.
 
-* Database initialization
+4. Selecting adming role give access to creating restaurants and adding menu items to restaurant.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Normal user only has access to view restaurant, adding menu item to cart and checkout.
